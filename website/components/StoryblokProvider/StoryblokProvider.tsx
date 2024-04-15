@@ -17,7 +17,7 @@ const components = {
 
 /** 2. Initialize it as usual */
 storyblokInit({
-    accessToken: "your_preview_token",
+    accessToken: process.env.storyblokApiToken,
     use: [apiPlugin],
     components
   });
