@@ -39,3 +39,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 TO RUN PROXY SERVER:
 
 local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem
+
+PRISMIC:
+
+npx @slicemachine/init@latest --repository timwatts --starter nextjs-starter-prismic-minimal-ts
