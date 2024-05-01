@@ -50,10 +50,8 @@ export default function Home() {
             </h1>
             <div>
               <p>It&apos;s time to ditch the negativity holding you back.</p>
-              <p>As a Positivity and Embodiment Coach, I help guys like you rediscover their confidence and build a life they're excited about.
-                We&apos;ll tackle the mental roadblocks keeping you stuck and equip you with practical tools to manage anxiety, boost your self-esteem, and achieve your goals.</p>
-
-              <p>Whether you&apos;re looking to improve your career, relationships, or overall well-being, this is your chance to take charge and become the best version of yourself.</p>
+              <p>{'As a Positivity and Embodiment Coach, I help guys like you rediscover their confidence and build a life they&apos;re excited about. We&apos;ll tackle the mental roadblocks keeping you stuck and equip you with practical tools to manage anxiety, boost your self-esteem, and achieve your goals.'}</p>
+              <p>{'Whether you&apos;re looking to improve your career, relationships, or overall well-being, this is your chance to take charge and become the best version of yourself.'}</p>
             </div>
             <p style={{ marginTop: "24px" }}>
               <Button variant="contained" size="large" color="primary" onClick={handleClickOpen}>
@@ -71,7 +69,7 @@ export default function Home() {
                       <br />
                       {'Email: tim_watts@ymail.com'}
                     </p>
-                    <p>Contact me to get a <strong style={{ color: theme.palette.primary.main }}>free</strong> 30 min consultation</p>
+                    <p>{'Contact me to get a '}<strong style={{ color: theme.palette.primary.main }}>{'free'}</strong>{' 30 min consultation'}</p>
                 </DialogContent>
                 <DialogActions sx={{ display: "flex", justifyContent: "center" }}>
                   <Button onClick={handleClose}>Close</Button>
