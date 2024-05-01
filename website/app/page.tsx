@@ -61,7 +61,7 @@ export default function Home() {
                 <DialogTitle>{'My site is almost ready.'}</DialogTitle>
                 <Divider />
                 <DialogContent sx={{ textAlign: "center", px: 8 }}>
-                  <ContactForm />
+
                     <p>
                       {'Please call or email me for now'}
                     </p>
