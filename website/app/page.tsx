@@ -63,15 +63,17 @@ export default function Home() {
                 <DialogTitle >My site is almost ready.</DialogTitle>
                 <Divider />
                 <DialogContent sx={{ textAlign: "center", px: 8 }}>
-                  <p>
-                    <strong>Please call or me for now:</strong>
-                  </p>
-                  <p>
-                    Phone: 801-739-4598
-                    <br />
-                    Email: tim_watts@ymail.com
-                  </p>
-                  <p>Contact me to get a <strong style={{ color: theme.palette.primary.main }}>free</strong> 30 min consultation</p>
+                  <>
+                    <p>
+                      <strong>Please call or me for now:</strong>
+                    </p>
+                    <p>
+                      Phone: 801-739-4598
+                      <br />
+                      Email: tim_watts@ymail.com
+                    </p>
+                    <p>Contact me to get a <strong style={{ color: theme.palette.primary.main }}>free</strong> 30 min consultation</p>
+                  </>
                 </DialogContent>
                 <DialogActions sx={{ display: "flex", justifyContent: "center" }}>
                   <Button onClick={handleClose}>Close</Button>
