@@ -11,6 +11,7 @@ import { Inter } from "next/font/google";
 import Image from 'next/image';
 import "./globals.css";
 import { AppBar, Toolbar, Typography } from '@mui/material';
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Analytics />
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <Box sx={{ flexGrow: 1 }}>

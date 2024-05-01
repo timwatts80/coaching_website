@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
 import Image from "next/image";
 import styles from "./page.module.css";
-import ContactForm from "@/src/components/ContactForm";
+import ContactForm from "../components/ContactForm";
 import Card from '@mui/material/Card';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
@@ -61,6 +61,7 @@ export default function Home() {
                 <DialogTitle>{'My site is almost ready.'}</DialogTitle>
                 <Divider />
                 <DialogContent sx={{ textAlign: "center", px: 8 }}>
+                  <ContactForm />
                     <p>
                       {'Please call or email me for now'}
                     </p>
