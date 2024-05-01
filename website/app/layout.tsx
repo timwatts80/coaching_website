@@ -29,18 +29,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Box sx={{ flexGrow: 1 }}>
-          <AppBar position="static">
-            <Toolbar className="MuiContainer-maxWidthLg">
-              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              <Image src={logoPath} alt="Logo" width={185} height={42}/>
-              </Typography>
-              <Button color="inherit">Login</Button>
-            </Toolbar>
-          </AppBar>
-        </Box>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
+            <Box sx={{ flexGrow: 1 }}>
+              <AppBar position="static">
+                <Toolbar className="MuiContainer-maxWidthLg">
+                  <Typography variant="h6" component="div" sx={{ display: "flex", flexDirection: "row", alignItems: "center", flexGrow: 1 }}>
+                    <Image src={logoPath} alt="Logo" width={185} height={42} />
+                  </Typography>
+                  <Button color="inherit">Login</Button>
+                </Toolbar>
+              </AppBar>
+            </Box>
             {children}
           </ThemeProvider>
         </AppRouterCacheProvider>
