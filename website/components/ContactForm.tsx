@@ -4,9 +4,8 @@ import Grid from '@mui/material/Grid';
 import Item from '@mui/material/Grid';
 
 export default function ContactForm() {
-  const [state, handleSubmit] = useForm("xjvnlwdo");
-  // const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM);
 
+  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM || '');
 
   if (state.succeeded) {
     return <p>Thanks for your submission!</p>;
