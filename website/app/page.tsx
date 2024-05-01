@@ -65,12 +65,12 @@ export default function Home() {
                 <DialogContent sx={{ textAlign: "center", px: 8 }}>
                   <>
                     <p>
-                      <strong>Please call or me for now:</strong>
+                      <strong>Please call or email me for now:</strong>
                     </p>
                     <p>
-                      Phone: 801-739-4598
+                      Phone: {'801-739-4598'}
                       <br />
-                      Email: tim_watts@ymail.com
+                      Email: {'tim_watts@ymail.com'}
                     </p>
                     <p>Contact me to get a <strong style={{ color: theme.palette.primary.main }}>free</strong> 30 min consultation</p>
                   </>
