@@ -26,13 +26,26 @@ const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#101B1E',
+      main: '#FF6D1F',
+      contrastText: '#fff',
     },
     secondary: {
-      main: '#19857b',
+      main: '#101B1E',
     },
     background: {
       default: '#fff',
+    },
+    grey: {
+      100: '#f8f9fa',
+      200: '#e9ecef',
+      300: '#dee2e6',
+      400: '#ced4da',
+      500: '#adb5bd',
+      600: '#6c757d',
+      700: '#495057',
+      800: '#343a40',
+      900: '#212529',
+      A700: '#101B1E',
     },
   },
   typography: {

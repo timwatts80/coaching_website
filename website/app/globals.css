@@ -100,8 +100,20 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin: 1.5rem 0;
+  line-height: 1.5rem;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+}
+
+
+/* Custom Styles */
+
+.container {
+  background: linear-gradient(90deg, #263238, #455a64);
 }

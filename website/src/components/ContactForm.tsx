@@ -1,6 +1,5 @@
-
-import React from 'react';
-import { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { TextField, Button, Box } from '@mui/material';
 
 interface FormData {
   name: string;
@@ -17,88 +16,37 @@ const ContactForm = () => {
     message: ''
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
-      [name]: value
+      [e.target.name]: e.target.value
     });
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/mailgun', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
       });
-      if (response.ok) {
-        console.log('Message sent successfully');
-        // Clear form fields after successful submission
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-      } else {
-        console.error('Failed to send message');
-      }
+      // Handle response...
     } catch (error) {
-      console.error('Error sending message:', error);
+      // Handle error...
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="subject">Subject:</label>
-        <input
-          type="text"
-          id="subject"
-          name="subject"
-          value={formData.subject}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="message">Message:</label>
-        <textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-        ></textarea>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+    <Box component="form" onSubmit={handleSubmit} noValidate autoComplete="off">
+      <TextField name="name" label="Name" size="small" value={formData.name} onChange={handleChange} />
+      <TextField name="email" label="Email" size="small" value={formData.email} onChange={handleChange} />
+      <TextField name="subject" label="Subject" size="small" value={formData.subject} onChange={handleChange} />
+      <TextField name="message" label="Message" size="small" value={formData.message} onChange={handleChange} multiline />
+      <Button variant="contained" color="primary" type="submit">Submit</Button>
+    </Box>
   );
 };
 

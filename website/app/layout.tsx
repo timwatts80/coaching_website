@@ -32,9 +32,9 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <Box sx={{ flexGrow: 1 }}>
-              <AppBar position="static">
-                <Toolbar className="MuiContainer-maxWidthLg">
-                  <Typography variant="h6" component="div" sx={{ display: "flex", flexDirection: "row", alignItems: "center", flexGrow: 1 }}>
+              <AppBar color="secondary" position="sticky">
+                <Toolbar className="MuiContainer-maxWidthLg" sx={{ display: "flex", justifyContent: "center" }}>
+                  <Typography variant="h6" component="div" sx={{ display: "flex", flexDirection: "row", alignItems: "center", flexGrow: 1, maxWidth: "lg" }}>
                     <Image src={logoPath} alt="Logo" width={185} height={42} />
                   </Typography>
                   <Button color="inherit">Login</Button>
