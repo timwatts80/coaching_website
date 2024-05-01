@@ -64,7 +64,7 @@ export default function Home() {
                 <Divider />
                 <DialogContent sx={{ textAlign: "center", px: 8 }}>
                   <p>
-                    <strong>Here's how to contact me for now:</strong>
+                    <strong>Here&apos;s how to contact me for now:</strong>
                   </p>
                   <p>
                     Phone: 801-739-4598
