@@ -48,13 +48,13 @@ export default function Home() {
             <h1 style={{ color: theme.palette.primary.main }}>
               {'Embrace Positivity and Embody Your Best Self'}
             </h1>
-            <p>
+            <div>
               <p>{'It\'s time to ditch the negativity holding you back.'}</p>
               <p>As a Positivity and Embodiment Coach, I help guys like you rediscover their confidence and build a life they're excited about.
                 We'll tackle the mental roadblocks keeping you stuck and equip you with practical tools to manage anxiety, boost your self-esteem, and achieve your goals.</p>
 
               <p>Whether you're looking to improve your career, relationships, or overall well-being, this is your chance to take charge and become the best version of yourself.</p>
-            </p>
+            </div>
             <p style={{ marginTop: "24px" }}>
               <Button variant="contained" size="large" color="primary" onClick={handleClickOpen}>
                 {'Get Started'}
