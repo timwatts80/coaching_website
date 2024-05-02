@@ -14,10 +14,10 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit}>
         <FormControl fullWidth>
-          <TextField id="name" type="name" name="name" label="Full Name" margin="normal" />
+          <TextField id="name" type="name" name="name" label="Full Name" margin="normal" required />
         </FormControl>
         <FormControl fullWidth>
-          <TextField id="email" type="email" name="email" label="Email Address" margin="normal" />
+          <TextField id="email" type="email" name="email" label="Email Address" margin="normal" required />
           <FormHelperText error>
             <ValidationError prefix="Email" field="email" errors={state.errors} />
           </FormHelperText>
