@@ -30,8 +30,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+        <link rel="icon" type="image/png" href="/icon.png" />
       </Head>
       <body className={inter.className}>
         <Analytics />
