@@ -29,10 +29,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
-      </Head>
       <body className={inter.className}>
         <Analytics />
         <AppRouterCacheProvider>
