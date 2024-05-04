@@ -33,12 +33,31 @@ export default function Home() {
   };
 
   return (
-    <Container maxWidth={false} className="container" sx={{ pt: 8 }}>
-    <Grid container maxWidth="lg"  sx={{ margin: { md: '-8px', lg: 'auto', }, pb: 8 }}>
-        <Grid item xs={12} md={7} sx={{ pr: { sm: 0, md: 8 } }}>
-          <Box sx={{ height: "150px", width: "150px", marginBottom: 2, borderRadius: "50%", border: "2px solid white", backgroundColor: theme.palette.secondary.main, overflow: "hidden", position: "relative" }}>
-            <Image src="/Coach_Tim.png" alt="Logo" width={150} height={230} style={{ position: "relative", left: "-10px", top: "10px", }} />
-          </Box>
+    <Container
+      maxWidth={false}
+      className="container"
+      sx={{
+        position: 'absolute',
+        height: "100vh",
+        backgroundImage: 'url("/Hero-Image.png")',
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: { sm: "left top", md: "80% top", lg: "80% top" },
+        px: { xs: 4, sm: 8 },
+        py: 8
+      }}>
+      <Grid container maxWidth="lg" sx={{ margin: { md: '-8px', lg: '50px auto', }, pb: 8 }}>
+        <Grid item xs={12} md={8}
+          sx={{
+            mt: {
+              xs: "70px",
+              md: "150px",
+            },
+            pr: {
+              sm: 0,
+              md: 8
+            }
+          }}>
           <h1 style={{ color: theme.palette.primary.main }}>
             {'Embrace Positivity and Embody Your Best Self'}
           </h1>
@@ -47,42 +66,26 @@ export default function Home() {
             <p>{'As a Positivity and Embodiment Coach, I help guys like you rediscover their confidence and build a life they\'re excited about. We\'ll tackle the mental roadblocks keeping you stuck and equip you with practical tools to manage anxiety, boost your self-esteem, and achieve your goals.'}</p>
             <p>{'Whether you\'re looking to improve your career, relationships, or overall well-being, this is your chance to take charge and become the best version of yourself.'}</p>
           </div>
-          {/* <p style={{ marginTop: "24px" }}>
-            <Button variant="contained" size="large" color="primary" onClick={handleClickOpen}>
-              {'Get Started'}
-            </Button>
-            <Dialog open={open} onClose={handleClose} sx={{ textAlign: "center" }}>
-              <DialogTitle>{'My site is almost ready.'}</DialogTitle>
-              <Divider />
-              <DialogContent sx={{ textAlign: "center", px: 8 }}>
-                <ContactForm />
-                <p>
-                  {'Please call or email me for now'}
-                </p>
-                <p>
-                  {'Phone: 801-739-4598'}
-                  <br />
-                  {'Email: tim_watts@ymail.com'}
-                </p>
-                <p>{'Contact me for a '}<strong style={{ color: theme.palette.primary.main }}>{'free'}</strong>{' 30 min consultation'}</p>
-              </DialogContent>
-              <DialogActions sx={{ display: "flex", justifyContent: "center" }}>
-                <Button onClick={handleClose}>Close</Button>
-              </DialogActions>
-            </Dialog>
-          </p> */}
+          <Button variant="contained" color="primary" size="large" onClick={handleClickOpen}>
+            {'Schedule a Free Consultation'}
+          </Button>
         </Grid>
-        <Grid item xs={12} md={5} sx={{ display: "flex", justifyContent: "flex-end", }}>
-          <Card sx={{ width: "100%", height: "100%", maxWidth: { sm: "100%", md: 425}, }} elevation={12}>
+      </Grid>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogContent sx={{ p: 0 }}>
+          <Card sx={{ width: "100%", height: "100%", maxWidth: { sm: "100%", md: 425 }, }}>
             <CardContent sx={{ mt: 2, textAlign: "center", }}>
               {'Contact me for a '}<strong style={{ color: theme.palette.primary.main }}>{'free'}</strong>{' 30 min consultation'}
             </CardContent>
-            <CardContent sx={{ px: 6, mb: 4 }}>
+            <CardContent sx={{ px: { xs: 4, md: 6 }, mb: -3 }}>
               <ContactForm />
             </CardContent>
           </Card>
-        </Grid>
-      </Grid>
-    </Container >
+        </DialogContent>
+        <DialogActions sx={{ px: { xs: 4, md: 6 }, mb: 4 }}>
+          <Button fullWidth size="large" variant="outlined" onClick={handleClose}>Close</Button>
+        </DialogActions>
+      </Dialog>
+    </Container>
   );
 }
