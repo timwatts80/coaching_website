@@ -38,7 +38,7 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <Box sx={{ flexGrow: 1 }}>
-              <AppBar position="fixed" sx={{ background: 'rgba(255, 255, 255, 0.2)', }} elevation={0}>
+              <AppBar position="fixed" sx={{ background: { xs: 'rgba(5, 127, 147, 0.6)', sm: 'rgba(255, 255, 255, 0.2)' }, }} elevation={0}>
                 <Toolbar className="MuiContainer-maxWidthLg" sx={{ display: "flex", justifyContent: "center",  }}>
                   <Typography variant="h6" component="div" sx={{ display: "flex", flexDirection: "row", alignItems: "center", flexGrow: 1, maxWidth: "lg" }}>
                     <Image src={logoPath} alt="Logo" width={185} height={42} />
