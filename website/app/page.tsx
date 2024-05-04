@@ -53,7 +53,7 @@ export default function Home() {
         backgroundImage: 'url("/Hero-Image.png")',
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: { sm: "left top", md: "80% top", lg: "80% top" },
+        backgroundPosition: { xs: "30% top", md: "80% top", lg: "80% top" },
         px: { xs: 4, sm: 8 },
         py: 8
       }}>
