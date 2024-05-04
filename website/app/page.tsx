@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTheme } from '@mui/material/styles';
 import Image from "next/image";
 import styles from "./page.module.css";
@@ -24,6 +24,17 @@ export default function Home() {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
 
+  const [vh, setVh] = useState('100vh');
+
+  useEffect(() => {
+    const setVhToWindowHeight = () => {
+      setVh(`${window.innerHeight}px`);
+    };
+    window.addEventListener('resize', setVhToWindowHeight);
+    setVhToWindowHeight();
+    return () => window.removeEventListener('resize', setVhToWindowHeight);
+  }, []);
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -38,7 +49,7 @@ export default function Home() {
       className="container"
       sx={{
         position: 'absolute',
-        height: "100vh",
+        height: vh,
         backgroundImage: 'url("/Hero-Image.png")',
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
