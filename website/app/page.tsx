@@ -49,9 +49,9 @@ export default function Home() {
       className="container"
       sx={{
         position: 'absolute',
-        height: { xs: '1000px', sm: '100vh'},
+        height: vh,
         backgroundImage: 'url("/Hero-Image.png")',
-        backgroundSize: "cover",
+        backgroundSize: { xs: "fit", sm: "cover" },
         backgroundRepeat: "no-repeat",
         backgroundPosition: { xs: "30% top", md: "80% top", lg: "80% top" },
         px: { xs: 4, sm: 8 },
