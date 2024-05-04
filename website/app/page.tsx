@@ -66,7 +66,7 @@ export default function Home() {
             <p>{'As a Positivity and Embodiment Coach, I help guys like you rediscover their confidence and build a life they\'re excited about. We\'ll tackle the mental roadblocks keeping you stuck and equip you with practical tools to manage anxiety, boost your self-esteem, and achieve your goals.'}</p>
             <p>{'Whether you\'re looking to improve your career, relationships, or overall well-being, this is your chance to take charge and become the best version of yourself.'}</p>
           </div>
-          <Button variant="contained" color="primary" size="large" onClick={handleClickOpen}>
+          <Button variant="contained" color="primary" size="large" sx={{ width: { xs: "100%", sm: 'auto' }, py: { xs: 1.5, sm: 'auto' } }} onClick={handleClickOpen}>
             {'Schedule a Free Consultation'}
           </Button>
         </Grid>
