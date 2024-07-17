@@ -49,7 +49,7 @@ export default function Home() {
       className="container"
       sx={{
         position: 'absolute',
-        height: { xs: '1000px', sm: '100vh' },
+        height: { xs: '100vh', md: 'auto' },
         backgroundImage: 'url("/Hero-Image.png")',
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -93,7 +93,7 @@ export default function Home() {
             </Grid>
             <Grid item xs={12} sx={{ mb: 2 }}>
               <Typography variant="h3" component="h3" sx={{ color: theme.palette.primary.contrastText, }}>
-                {'embrace positivity. embody your best self'}
+                {'embrace positivity. embody your best self.'}
               </Typography>
             </Grid>
           </Grid>
