@@ -12,28 +12,13 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <FormControl fullWidth>
-        <TextField id="name" type="name" name="name" label="Full Name" margin="normal" required />
-      </FormControl>
-      <FormControl fullWidth>
-        <TextField id="email" type="email" name="email" label="Email Address" margin="normal" required />
-        <FormHelperText error>
-          <ValidationError prefix="Email" field="email" errors={state.errors} />
-        </FormHelperText>
-      </FormControl>
-      <FormControl fullWidth>
-        <TextField id="message" name="message" label="Message" multiline rows={4} margin="normal" />
-        <FormHelperText error>
-          <ValidationError prefix="Message" field="message" errors={state.errors} />
-        </FormHelperText>
-      </FormControl>
-      <Button fullWidth variant="contained" size="large" type="submit" sx={{ mt: 1 }} disabled={state.submitting} >
-        Submit
-      </Button>
-      <FormHelperText error>
-        <ValidationError errors={state.errors} />
-      </FormHelperText>
-    </form>
+    <Box sx={{ width: '100%', height: '600px', overflow: 'hidden' }}>
+      <iframe
+        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1E9GyfFwA0meyAtms4lW68sFpJKgZ11J3_R9G2ZhiH9TeELxh43V1Z07F-975le1baY-y82PSS?gv=true"
+        style={{ border: 0 }}
+        width="100%"
+        height="100%"
+      ></iframe>
+    </Box>
   );
 }

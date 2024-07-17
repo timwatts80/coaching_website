@@ -49,7 +49,7 @@ export default function Home() {
       className="container"
       sx={{
         position: 'absolute',
-        height: { xs: '1000px', sm: '100vh'},
+        height: { xs: '1000px', sm: '100vh' },
         backgroundImage: 'url("/Hero-Image.png")',
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -61,40 +61,77 @@ export default function Home() {
         <Grid item xs={12} md={8}
           sx={{
             mt: {
-              xs: "70px",
-              md: "150px",
+              xs: "20px",
+              md: "50px",
             },
             pr: {
               sm: 0,
               md: 8
             }
           }}>
-          <h1 style={{ color: theme.palette.primary.main }}>
-            {'Embrace Positivity and Embody Your Best Self'}
-          </h1>
-          <div>
-            <p>{'It\'s time to ditch the negativity holding you back.'}</p>
-            <p>{'As a Positivity and Embodiment Coach, I help guys like you rediscover their confidence and build a life they\'re excited about. We\'ll tackle the mental roadblocks keeping you stuck and equip you with practical tools to manage anxiety, boost your self-esteem, and achieve your goals.'}</p>
-            <p>{'Whether you\'re looking to improve your career, relationships, or overall well-being, this is your chance to take charge and become the best version of yourself.'}</p>
-          </div>
-          <Button variant="contained" color="primary" size="large" sx={{ mt: 4, width: { xs: "100%", sm: 'auto' }, py: { xs: 1.5, sm: 'auto' } }} onClick={handleClickOpen}>
-            {'Schedule a Free Consultation'}
+          <Grid container spacing={0} sx={{ my: 8 }}>
+            <Grid item xs={12}>
+              <Typography variant="h2" component="h2" sx={{ color: theme.palette.primary.contrastText, fontSize: '2.475rem', }}>{'Helping men break free and'}</Typography>
+            </Grid>
+            <Grid item xs={12} sx={{ mt: 4, mb: 2, }}>
+              <Typography
+                variant="h1"
+                component="h1"
+                sx={{
+                  color: theme.palette.primary.main,
+                  lineHeight: '0.9',
+                  fontSize: {
+                    xs: '6.5rem',
+                    sm: '6.5rem',
+                    md: '8rem',
+                  },
+                  }}
+              >
+                  {'Thrive'}
+              </Typography>
+              <Divider sx={{ borderBottomWidth: '5px', borderColor: theme.palette.primary.main, }} />
+            </Grid>
+            <Grid item xs={12} sx={{ mb: 2 }}>
+              <Typography variant="h3" component="h3" sx={{ color: theme.palette.primary.contrastText, }}>
+                {'embrace positivity. embody your best self'}
+              </Typography>
+            </Grid>
+          </Grid>
+          <Button variant="outlined" color="inherit" size="large" sx={{ mt: 1, width: { xs: "100%", sm: 'auto' }, py: { xs: 1.5, sm: 'auto' }, letterSpacing: '2px' }} onClick={handleClickOpen}>
+            {'Unlock your potential'}
           </Button>
         </Grid>
       </Grid>
-      <Dialog open={open} onClose={handleClose}>
-        <DialogContent sx={{ p: 0 }}>
-          <Card sx={{ width: "100%", height: "100%", maxWidth: { sm: "100%", md: 425 }, }}>
-            <CardContent sx={{ mt: 2, textAlign: "center", }}>
-              {'Contact me for a '}<strong style={{ color: theme.palette.primary.main }}>{'free'}</strong>{' 30 min consultation'}
+      <Dialog open={open} onClose={handleClose} fullWidth={true} maxWidth="lg">
+        <DialogContent sx={{ p: 0, }}>
+          <Card sx={{ width: "100%", height: "100%", }}>
+            <CardContent sx={{ mt: 0, textAlign: "center", }}>
+              <Typography variant="h4" component="h4">
+                {'Schedule a '}
+                <strong style={{ color: theme.palette.primary.main }}>
+                  {'free'}
+                </strong>
+                {' 30 min consultation'}
+              </Typography>
             </CardContent>
-            <CardContent sx={{ px: { xs: 4, md: 6 }, mb: -3 }}>
+            <Divider />
+            <CardContent
+              sx={{
+                px: 0,
+                my: 0,
+                backgroundColor: theme.palette['grey']['200'],
+                '&.MuiCardContent-root:last-child': {
+                  py: 0
+                }
+              }}
+            >
               <ContactForm />
             </CardContent>
           </Card>
         </DialogContent>
-        <DialogActions sx={{ px: { xs: 4, md: 6 }, mb: 4 }}>
-          <Button fullWidth size="large" variant="outlined" onClick={handleClose}>Close</Button>
+        <Divider />
+        <DialogActions sx={{ px: { xs: 2, md: 4 }, my: 1, }}>
+          <Button fullWidth size="small" variant="contained" onClick={handleClose}>Close</Button>
         </DialogActions>
       </Dialog>
     </Container>

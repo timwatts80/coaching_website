@@ -50,7 +50,45 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: roboto.style.fontFamily,
+    h1: {
+      fontSize: '10.65rem',
+      fontWeight: 400,
+      textTransform: 'uppercase',
+    },
+    h2: {
+      fontSize: '3rem',
+      fontWeight: 400,
+      textTransform: 'uppercase',
+    },
+    h3: {
+      fontSize: '1.75rem',
+      fontWeight: 300,
+      letterSpacing: '0.06em',
+      color: 'rgba(0, 0, 0, 0.87)',
+    },
+    h4: {
+      fontSize: '1.25rem',
+      fontWeight: 400,
+      letterSpacing: '0.02em', 
+      color: 'rgba(0, 0, 0, 0.87)',
+    },
+    h5: {
+      fontSize: '1.25rem',
+      fontWeight: 500,
+      color: 'rgba(0, 0, 0, 0.87)',
+    },
+    h6: {
+      fontSize: '1rem',
+      fontWeight: 500,
+    },
   },
+  components: {
+    MuiButton: {
+      defaultProps: {
+        disableElevation: true
+      }
+    }
+  }
 });
 
 export default theme;

@@ -40,8 +40,8 @@ export default function RootLayout({
           <ThemeProvider theme={theme}>
             <Box sx={{ flexGrow: 1 }}>
               <AppBar position="fixed" sx={{ background: { xs: 'rgba(16, 27, 30, 0.6)', sm: 'rgba(16, 27, 30, 0.6)' }, backdropFilter: 'blur(10px)', }} elevation={0}>
-                <Toolbar className="MuiContainer-maxWidthLg" sx={{ display: "flex", justifyContent: "center",  }}>
-                  <Typography variant="h6" component="div" sx={{ display: "flex", flexDirection: "row", alignItems: "center", flexGrow: 1, maxWidth: "lg" }}>
+                <Toolbar sx={{ display: "flex", justifyContent: "center", }}>
+                  <Typography variant="h6" component="div" sx={{ display: "flex", flexDirection: "row", alignItems: "center", flexGrow: 1, maxWidth: "xl" }}>
                     <Image src={logoPath} alt="Logo" width={185} height={42} />
                   </Typography>
                   <Button color="inherit">Login</Button>
