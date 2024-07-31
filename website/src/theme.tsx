@@ -56,8 +56,14 @@ const theme = createTheme({
     secondary: {
       main: '#101B1E',
     },
+    text: {
+      primary: 'rgba(0, 0, 0, 0.87)',
+      secondary: 'rgba(0, 0, 0, 0.53)',
+      disabled: 'rgba(0, 0, 0, 0.38)',
+    },
     background: {
       default: '#fff',
+
     },
     grey: {
       100: '#f8f9fa',
@@ -85,7 +91,7 @@ const theme = createTheme({
       textTransform: 'uppercase',
     },
     h3: {
-      fontSize: '1.25rem',
+      fontSize: '1.5rem',
       fontWeight: 300,
       letterSpacing: '0.06em',
       color: 'rgba(0, 0, 0, 0.87)',

@@ -119,16 +119,6 @@ export default function Hero() {
                 alt="Header underline"
                 src="/headerUnderline.svg"
               />
-              {/* <Divider
-                sx={{
-                  borderBottomWidth: '3px',
-                  borderColor: theme.palette.primary.main,
-                  maxWidth: {
-                    sm: '100%',
-                    md: 'sm',  
-                  },
-                }}
-                /> */}
             </Grid>
             <Grid item xs={12} sx={{ mb: 4 }}>
               <Typography variant="h3" component="h3" sx={{ color: theme.palette.primary.contrastText, }}>
@@ -140,7 +130,7 @@ export default function Hero() {
               color="inherit"
               size="small"
               sx={{
-                mt: 1,
+                mt: 4,
                 width: {
                   xs: "100%",
                   md: 'auto'

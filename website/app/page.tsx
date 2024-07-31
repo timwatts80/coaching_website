@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTheme } from '@mui/material/styles';
 import Image from "next/image";
+import Script from 'next/script';
 import styles from "./page.module.css";
 import ContactForm from "../components/ContactForm";
 import Card from '@mui/material/Card';
@@ -21,14 +22,77 @@ import DialogActions from '@mui/material/DialogActions';
 import Divider from '@mui/material/Divider';
 import ServiceCard from '@/components/ServiceCard';
 import Hero from '@/components/Hero';
+import { loadStripe } from '@stripe/stripe-js';
 
 export default function Home() {
   const theme = useTheme();
+  
+  const stripePublishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
+
+  if (!stripePublishableKey) {
+    return <div>Error: Stripe publishable key is not set.</div>;
+  }
 
   return (
     <>
       <Hero />
-      {/* <ServiceCard /> */}
+      <Container maxWidth="xl"
+        sx={{
+          my: 8,
+        }}
+      >
+        <div>
+          <Script async src="https://js.stripe.com/v3/pricing-table.js"></Script>
+          <stripe-pricing-table
+            pricing-table-id="prctbl_1PiiKvCEUfFr0vqOqNpFqPfj"
+            publishable-key={stripePublishableKey}
+          ></stripe-pricing-table>
+        </div>
+        <Grid container spacing={3} justifyContent="center" alignItems="stretch">
+          <Grid item xs={12} md={4} display="flex">
+            <ServiceCard
+              cardTitle={'Embodiment'}
+              cardBody={'Connect with your physical self through movement, breathwork, and mindfulness practices. Develop a fitness routine that aligns with your goals, build strength and resilience, and release trapped emotions. Cultivate healthy masculinity by embodying strength, resilience, and groundedness through mindful movement.'}
+              showButton={true}
+              cardAction={'Book Now'} />
+          </Grid>
+          <Grid item xs={12} md={4} display="flex">
+            <ServiceCard
+              cardTitle={'Positivity'}
+              cardBody={'Identify and reframe limiting beliefs and negative thought patterns that hold you back. Embrace challenges as opportunities for growth and shift your focus towards the positive aspects of your life to increase happiness and well-being. Cultivate a mindset that fosters resilience and positivity.'}
+              showButton={true}
+              cardAction={'Book Now'} />
+          </Grid>
+          <Grid item xs={12} md={4} display="flex">
+            <ServiceCard
+              cardTitle={'Nice Guy Recovery'}
+              cardBody={'Explore Nice Guy Syndrome and how it affects your life and relationships. Learn to set boundaries, assert your needs, and prioritize your well-being without guilt. Embrace your true self, build fulfilling relationships based on authenticity and respect, and develop assertive communication skills for stronger connections.'}
+              showButton={true}
+              cardAction={'Book Now'} />
+          </Grid>
+          {/* <Grid item xs={12} md={4} display="flex">
+            <ServiceCard
+              cardTitle={'Nice Guy Recovery'}
+              cardBody={'Explore Nice Guy Syndrome and how it affects your life and relationships. Learn to set boundaries, assert your needs, and prioritize your well-being without guilt. Embrace your true self, build fulfilling relationships based on authenticity and respect, and develop assertive communication skills for stronger connections.'}
+              showButton={true}
+              cardAction={'Book Now'} />
+          </Grid>
+          <Grid item xs={12} md={4} display="flex">
+            <ServiceCard
+              cardTitle={'Nice Guy Recovery'}
+              cardBody={'Explore Nice Guy Syndrome and how it affects your life and relationships. Learn to set boundaries, assert your needs, and prioritize your well-being without guilt. Embrace your true self, build fulfilling relationships based on authenticity and respect, and develop assertive communication skills for stronger connections.'}
+              showButton={true}
+              cardAction={'Book Now'} />
+          </Grid>
+          <Grid item xs={12} md={4} display="flex">
+            <ServiceCard
+              cardTitle={'Nice Guy Recovery'}
+              cardBody={'Explore Nice Guy Syndrome and how it affects your life and relationships. Learn to set boundaries, assert your needs, and prioritize your well-being without guilt. Embrace your true self, build fulfilling relationships based on authenticity and respect, and develop assertive communication skills for stronger connections.'}
+              showButton={true}
+              cardAction={'Book Now'} />
+          </Grid> */}
+        </Grid>
+      </Container>
     </>
   );
 }
