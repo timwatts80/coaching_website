@@ -44,7 +44,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ cardTitle, cardBody, cardActi
             </CardContent>
             {showButton && (
                 <CardActions sx={{ p: 2 }}>
-                    <Button size="large" variant="contained">{cardAction}</Button>
+                    <Button size="large" variant="contained" href="#pricing">{cardAction}</Button>
                 </CardActions>
             )}
         </Card>

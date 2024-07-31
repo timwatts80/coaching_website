@@ -26,7 +26,7 @@ import { loadStripe } from '@stripe/stripe-js';
 
 export default function Home() {
   const theme = useTheme();
-  
+
   const stripePublishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
 
   if (!stripePublishableKey) {
@@ -36,63 +36,76 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Container maxWidth="xl"
-        sx={{
-          my: 8,
-        }}
-      >
-        <div>
-          <Script async src="https://js.stripe.com/v3/pricing-table.js"></Script>
-          <stripe-pricing-table
-            pricing-table-id="prctbl_1PiiKvCEUfFr0vqOqNpFqPfj"
-            publishable-key={stripePublishableKey}
-          ></stripe-pricing-table>
-        </div>
-        <Grid container spacing={3} justifyContent="center" alignItems="stretch">
-          <Grid item xs={12} md={4} display="flex">
-            <ServiceCard
-              cardTitle={'Embodiment'}
-              cardBody={'Connect with your physical self through movement, breathwork, and mindfulness practices. Develop a fitness routine that aligns with your goals, build strength and resilience, and release trapped emotions. Cultivate healthy masculinity by embodying strength, resilience, and groundedness through mindful movement.'}
-              showButton={true}
-              cardAction={'Book Now'} />
+      <Box>
+        <Box id="coaching" sx={{ py: 4, }}></Box>
+        <Typography variant="h2" align="center" sx={{ color: theme.palette.primary.main,}}>Transformational Coaching</Typography>
+        <Container
+          sx={{
+            my: 8,
+            px: {xs: 3},
+          }}
+        >
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={4}>
+              <ServiceCard
+                cardTitle={'Embodiment'}
+                cardBody={'Connect with your physical self through movement, breathwork, and mindfulness practices. Develop a fitness routine that aligns with your goals, build strength and resilience, and release trapped emotions. Cultivate healthy masculinity by embodying strength, resilience, and groundedness through mindful movement.'}
+                showButton={true}
+                cardAction={'Book Now'} />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <ServiceCard
+                cardTitle={'Positivity'}
+                cardBody={'Identify and reframe limiting beliefs and negative thought patterns that hold you back. Embrace challenges as opportunities for growth and shift your focus towards the positive aspects of your life to increase happiness and well-being. Cultivate a mindset that fosters resilience and positivity.'}
+                showButton={true}
+                cardAction={'Book Now'} />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <ServiceCard
+                cardTitle={'Nice Guy Recovery'}
+                cardBody={'Explore Nice Guy Syndrome and how it affects your life and relationships. Learn to set boundaries, assert your needs, and prioritize your well-being without guilt. Embrace your true self, build fulfilling relationships based on authenticity and respect, and develop assertive communication skills for stronger connections.'}
+                showButton={true}
+                cardAction={'Book Now'} />
+            </Grid>
+            {/* <Grid item xs={12} md={4}>
+              <ServiceCard
+                cardTitle={'Nice Guy Recovery'}
+                cardBody={'Explore Nice Guy Syndrome and how it affects your life and relationships. Learn to set boundaries, assert your needs, and prioritize your well-being without guilt. Embrace your true self, build fulfilling relationships based on authenticity and respect, and develop assertive communication skills for stronger connections.'}
+                showButton={true}
+                cardAction={'Book Now'} />
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <ServiceCard
+                cardTitle={'Nice Guy Recovery'}
+                cardBody={'Explore Nice Guy Syndrome and how it affects your life and relationships. Learn to set boundaries, assert your needs, and prioritize your well-being without guilt. Embrace your true self, build fulfilling relationships based on authenticity and respect, and develop assertive communication skills for stronger connections.'}
+                showButton={true}
+                cardAction={'Book Now'} />
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <ServiceCard
+                cardTitle={'Nice Guy Recovery'}
+                cardBody={'Explore Nice Guy Syndrome and how it affects your life and relationships. Learn to set boundaries, assert your needs, and prioritize your well-being without guilt. Embrace your true self, build fulfilling relationships based on authenticity and respect, and develop assertive communication skills for stronger connections.'}
+                showButton={true}
+                cardAction={'Book Now'} />
+            </Grid> */}
           </Grid>
-          <Grid item xs={12} md={4} display="flex">
-            <ServiceCard
-              cardTitle={'Positivity'}
-              cardBody={'Identify and reframe limiting beliefs and negative thought patterns that hold you back. Embrace challenges as opportunities for growth and shift your focus towards the positive aspects of your life to increase happiness and well-being. Cultivate a mindset that fosters resilience and positivity.'}
-              showButton={true}
-              cardAction={'Book Now'} />
-          </Grid>
-          <Grid item xs={12} md={4} display="flex">
-            <ServiceCard
-              cardTitle={'Nice Guy Recovery'}
-              cardBody={'Explore Nice Guy Syndrome and how it affects your life and relationships. Learn to set boundaries, assert your needs, and prioritize your well-being without guilt. Embrace your true self, build fulfilling relationships based on authenticity and respect, and develop assertive communication skills for stronger connections.'}
-              showButton={true}
-              cardAction={'Book Now'} />
-          </Grid>
-          {/* <Grid item xs={12} md={4} display="flex">
-            <ServiceCard
-              cardTitle={'Nice Guy Recovery'}
-              cardBody={'Explore Nice Guy Syndrome and how it affects your life and relationships. Learn to set boundaries, assert your needs, and prioritize your well-being without guilt. Embrace your true self, build fulfilling relationships based on authenticity and respect, and develop assertive communication skills for stronger connections.'}
-              showButton={true}
-              cardAction={'Book Now'} />
-          </Grid>
-          <Grid item xs={12} md={4} display="flex">
-            <ServiceCard
-              cardTitle={'Nice Guy Recovery'}
-              cardBody={'Explore Nice Guy Syndrome and how it affects your life and relationships. Learn to set boundaries, assert your needs, and prioritize your well-being without guilt. Embrace your true self, build fulfilling relationships based on authenticity and respect, and develop assertive communication skills for stronger connections.'}
-              showButton={true}
-              cardAction={'Book Now'} />
-          </Grid>
-          <Grid item xs={12} md={4} display="flex">
-            <ServiceCard
-              cardTitle={'Nice Guy Recovery'}
-              cardBody={'Explore Nice Guy Syndrome and how it affects your life and relationships. Learn to set boundaries, assert your needs, and prioritize your well-being without guilt. Embrace your true self, build fulfilling relationships based on authenticity and respect, and develop assertive communication skills for stronger connections.'}
-              showButton={true}
-              cardAction={'Book Now'} />
-          </Grid> */}
-        </Grid>
-      </Container>
+        </Container>
+        <Box id="pricing" sx={{
+          backgroundColor: "#313131",
+          py: 8,
+        }}>
+          <Typography variant="h2" align="center" sx={{ color: theme.palette.primary.main }}>Pricing</Typography>
+          <Box sx={{
+            mt: 8,
+          }}>
+            <Script async src="https://js.stripe.com/v3/pricing-table.js"></Script>
+            <stripe-pricing-table
+              pricing-table-id="prctbl_1PiiKvCEUfFr0vqOqNpFqPfj"
+              publishable-key={stripePublishableKey}
+            ></stripe-pricing-table>
+          </Box>
+        </Box>
+      </Box>
     </>
   );
 }

@@ -22,6 +22,8 @@ import DialogActions from '@mui/material/DialogActions';
 import Divider from '@mui/material/Divider';
 import ServiceCard from '@/components/ServiceCard';
 import HeroImage from '../public/headerUnderline.png';
+import IconButton from '@mui/material/IconButton';
+import ChevronDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 export default function Hero() {
   const theme = useTheme();
@@ -58,7 +60,8 @@ export default function Hero() {
         backgroundRepeat: "no-repeat",
         backgroundPosition: { xs: "left top", md: "50% top", },
         px: { xs: 4, sm: 8 },
-        py: 8
+        pt: 8,
+        pb: {xs: 0, sm: 8}
       }}>
       <Grid container maxWidth="lg" sx={{ margin: { md: '50px auto', }, pb: 8 }}>
         <Grid item xs={12} md={8}
@@ -68,7 +71,7 @@ export default function Hero() {
               md: 8
             }
           }}>
-          <Grid container spacing={0} sx={{ my: 8 }}>
+          <Grid container spacing={0} sx={{ my: 8, textAlign: {xs: 'center', md: 'left'} }}>
             <Grid item xs={12}>
               <Typography
                 variant="h2"
@@ -86,7 +89,7 @@ export default function Hero() {
                 {'Break free from the nice guy and'}
               </Typography>
             </Grid>
-            <Grid item xs={12} sx={{ mt: 6,}}>
+            <Grid item xs={12} sx={{ mt: 6, }}>
               <Typography
                 variant="h1"
                 component="h1"
@@ -98,6 +101,7 @@ export default function Hero() {
                     md: '8rem',
                     lg: '8rem',
                   },
+                  mt: {xs: 6, md: '0'},
                   fontFamily: theme.kalamTypography.fontFamily,
                   textShadow: '5px 10px 20px rgba(0,0,0,0.2)',
                 }}
@@ -107,12 +111,12 @@ export default function Hero() {
               <Box
                 component="img"
                 sx={{
-                  height: 'auto', 
-                  width: '100%', 
+                  height: 'auto',
+                  width: '100%',
                   maxWidth: {
                     sm: 'auto',
                     md: '325px',
-                   }, 
+                  },
                   mb: 2,
                   filter: 'drop-shadow(5px 10px 20px rgba(0,0,0,0.2))',
                 }}
@@ -125,30 +129,44 @@ export default function Hero() {
                 {'embrace positivity. embody your best self.'}
               </Typography>
             </Grid>
-            <Button
-              variant="outlined"
-              color="inherit"
-              size="small"
-              sx={{
-                mt: 4,
-                width: {
-                  xs: "100%",
-                  md: 'auto'
-                },
-                py: 1.5,
-                px: {
-                  xs: 'auto',
-                  md: 4
-                },
-                letterSpacing: '2px',
-                '&:hover': {
-                  color: theme.palette.primary.main,
-                },
-              }}
-              onClick={handleClickOpen}
-            >
-              {'Unlock your potential'}
-            </Button>
+            <Grid item xs={12} sx={{ mb: 4 }}>
+              <Box sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                maxWidth: {xs: '100%', md: '350px'}
+              }}>
+                <Button
+                  variant="outlined"
+                  color="inherit"
+                  size="small"
+                  sx={{
+                    mt: 4,
+                    width: {
+                      xs: "100%",
+                      md: 'auto'
+                    },
+                    py: 1.5,
+                    px: {
+                      xs: 'auto',
+                      md: 4
+                    },
+                    letterSpacing: '2px',
+                    '&:hover': {
+                      color: theme.palette.primary.main,
+                    },
+                  }}
+                  onClick={handleClickOpen}
+                >
+                  {'Unlock your potential'}
+                </Button><br />
+                <a href="#coaching" style={{ display: 'flex', justifyContent: 'center', textDecoration: 'none', }}>
+                  <IconButton>
+                    <ChevronDownIcon sx={{ fontSize: '50px', color: 'white' }} /> {/* Adjust the fontSize as needed */}
+                  </IconButton>
+                </a>
+              </Box>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
