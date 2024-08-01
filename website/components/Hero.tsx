@@ -138,9 +138,10 @@ export default function Hero() {
               }}>
                 <Button
                   variant="outlined"
-                  color="inherit"
                   size="small"
                   sx={{
+                    color: 'white',
+                    borderColor: 'white',
                     mt: 4,
                     width: {
                       xs: "100%",
