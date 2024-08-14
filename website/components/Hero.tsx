@@ -27,6 +27,7 @@ import ChevronDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 export default function Hero() {
   const theme = useTheme();
+
   const [open, setOpen] = useState(false);
 
   const [vh, setVh] = useState('100vh');
@@ -39,6 +40,13 @@ export default function Hero() {
     setVhToWindowHeight();
     return () => window.removeEventListener('resize', setVhToWindowHeight);
   }, []);
+
+  const handleScrollToCoaching = () => {
+    const coachingElement = document.querySelector('#coaching');
+    if (coachingElement) {
+      coachingElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -161,11 +169,31 @@ export default function Hero() {
                 >
                   {'Unlock your potential'}
                 </Button><br />
-                <a href="#coaching" style={{ display: 'flex', justifyContent: 'center', textDecoration: 'none', }}>
-                  <IconButton>
-                    <ChevronDownIcon sx={{ fontSize: '50px', color: 'white' }} /> {/* Adjust the fontSize as needed */}
+                <div style={{ display: 'flex', justifyContent: 'center', textDecoration: 'none', }}>
+                  <IconButton onClick={handleScrollToCoaching} sx={{
+                    p: 3,
+                    '&.MuiIconButton-root:hover': {
+                      backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                      color: theme.palette.primary.main,
+                    },
+                    '&:hover .MuiSvgIcon-root': {
+                      color: theme.palette.primary.main,
+                      mt: '-10px',
+                    },
+                    ':active .MuiSvgIcon-root': {
+                      color: theme.palette.primary.contrastText,
+                      mt: '5px',
+                    },
+                  }}>
+                    <ChevronDownIcon sx={{
+                      position: 'absolute',
+                      fontSize: '50px',
+                      color: 'white',
+                      transition: 'all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1)',                  
+                      }}
+                    /> {/* Adjust the fontSize as needed */}
                   </IconButton>
-                </a>
+                </div>
               </Box>
             </Grid>
           </Grid>

@@ -49,23 +49,23 @@ export default function Home() {
             <Grid item xs={12} md={4}>
               <ServiceCard
                 cardTitle={'Embodiment'}
-                cardBody={'Connect with your physical self through movement, breathwork, and mindfulness practices. Develop a fitness routine that aligns with your goals, build strength and resilience, and release trapped emotions. Cultivate healthy masculinity by embodying strength, resilience, and groundedness through mindful movement.'}
+                cardBody={'Connect with your physical self through movement, breathwork, and mindfulness practices.\n\nDevelop a fitness routine that aligns with your goals, build strength and resilience, and release trapped emotions. Cultivate healthy masculinity by embodying strength, resilience, and groundedness through mindful movement.'}
                 showButton={true}
-                cardAction={'Book Now'} />
+                cardAction={'Unlock Your Potential'} />
             </Grid>
             <Grid item xs={12} md={4}>
               <ServiceCard
                 cardTitle={'Positivity'}
-                cardBody={'Identify and reframe limiting beliefs and negative thought patterns that hold you back. Embrace challenges as opportunities for growth and shift your focus towards the positive aspects of your life to increase happiness and well-being. Cultivate a mindset that fosters resilience and positivity.'}
+                cardBody={'Identify and reframe limiting beliefs and negative thought patterns that hold you back.\n\nEmbrace challenges as opportunities for growth and shift your focus towards the positive aspects of your life to increase happiness and well-being. Cultivate a mindset that fosters resilience and positivity.'}
                 showButton={true}
-                cardAction={'Book Now'} />
+                cardAction={'Unlock Your Potential'} />
             </Grid>
             <Grid item xs={12} md={4}>
               <ServiceCard
                 cardTitle={'Nice Guy Recovery'}
-                cardBody={'Explore Nice Guy Syndrome and how it affects your life and relationships. Learn to set boundaries, assert your needs, and prioritize your well-being without guilt. Embrace your true self, build fulfilling relationships based on authenticity and respect, and develop assertive communication skills for stronger connections.'}
+                cardBody={'Explore Nice Guy Syndrome and how it affects your life and relationships.\n\n Learn to set boundaries, assert your needs, and prioritize your well-being without guilt. Embrace your true self, build fulfilling relationships based on authenticity and respect, and develop assertive communication skills for stronger connections.'}
                 showButton={true}
-                cardAction={'Book Now'} />
+                cardAction={'Unlock Your Potential'} />
             </Grid>
             {/* <Grid item xs={12} md={4}>
               <ServiceCard
@@ -90,7 +90,7 @@ export default function Home() {
             </Grid> */}
           </Grid>
         </Container>
-        <Box id="pricing" sx={{
+        {/* <Box id="pricing" sx={{
           backgroundColor: "#313131",
           py: 8,
         }}>
@@ -104,7 +104,7 @@ export default function Home() {
               publishable-key={stripePublishableKey}
             ></stripe-pricing-table>
           </Box>
-        </Box>
+        </Box> */}
       </Box>
     </>
   );
